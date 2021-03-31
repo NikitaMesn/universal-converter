@@ -5,6 +5,14 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.*;
 
+
+/*
+ * Задачи класса:
+ * 1. Получить пригодный для конвертации вид данных запроса
+ * 2. Осущиствить проверку возможности провести конвертацию
+ * 3. Провести конвертацию
+ *
+ */
 public class Converter {
     private Map<String, String> mapPOST;
     private String from;
@@ -18,6 +26,7 @@ public class Converter {
         this.to = mapPOST.get("to");
         this.csv= new SearchCSV(pathToCSV);
 
+
     }
 
     private List<String> createNumerator() throws Exception400 {
@@ -25,8 +34,8 @@ public class Converter {
         if ("".contains(from)) {
 
         } else if (from.contains("1/")) {
-            numerator.add(from);
-            return numerator; // в задание сказано что могут быть герцы
+
+            numerator.addAll(Arrays.asList(from.split("\\*")));// в задание сказано что могут быть герцы
         } else if (from.contains("/")) {
             String[] fr = from.split("/");
             if (fr.length > 2) throw new Exception400();
@@ -36,7 +45,7 @@ public class Converter {
             numerator.addAll(Arrays.asList(from.split("\\*")));
         }
 
-        if (to.contains("/")) {
+        if (to.contains("/") && !to.contains("1/")) {
             String[] t = to.split("/");
             if (t.length > 2) throw new Exception400();
             numerator.addAll(Arrays.asList(t[1].split("\\*")));
@@ -52,8 +61,7 @@ public class Converter {
         if ("".equals(to)) {
 
         }else if (to.contains("1/")) {
-            denominator.add(from);
-            return denominator; // в задание сказано что могут быть герцы
+            denominator.addAll(Arrays.asList(to.split("\\*")));// в задание сказано что могут быть герцы
 
         } else if (to.contains("/")) {
             String[] t = to.split("/");
@@ -64,7 +72,7 @@ public class Converter {
             denominator.addAll(Arrays.asList(to.split("\\*")));
         }
 
-        if (from.contains("/")) {
+        if (from.contains("/") && !from.contains("1/")) {
             String[] f= from.split("/");
             if (f.length > 2) throw new Exception400();
             denominator.addAll(Arrays.asList(f[1].split("\\*")));
@@ -75,6 +83,7 @@ public class Converter {
 
 
     private Map<String, List<String>> chekNumDem() throws Exception404, Exception400, IOException {
+        //проверяем все элементы запроса, в случаю не подходящих, бросаем ошибку, которую ловим в EchoHandler
         Map<String, List<String>> mapNumDem = new HashMap<>();
         List<String> numerator = createNumerator();
         List<String> denominator = createDenominator();
@@ -106,8 +115,6 @@ public class Converter {
     }
 
 
-
-
     public String makeConvert() throws Exception404, IOException, Exception400 {
         BigDecimal result = BigDecimal.ONE;
         List<String> numerator = chekNumDem().get("numerator");
@@ -124,7 +131,7 @@ public class Converter {
             MeasurementUnit searchUnit = null;
             for (String den : denominator) {
 
-                searchUnit = new MeasurementUnit(den);
+                searchUnit = new MeasurementUnit();
 
                 searchUnit = searchUnit.getMeasurementUnitByName(num, den);
                 if (searchUnit != null) break;
@@ -143,7 +150,6 @@ public class Converter {
             result= result.setScale(0);
 
         return result.toPlainString();
-
     }
 }
 

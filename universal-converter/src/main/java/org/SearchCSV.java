@@ -6,6 +6,13 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 
+/*
+ * Задачи класса:
+ * 1. Создание связнанных элементов MeasurementUnit
+ * 2. Проверка нахождения элементов запроса в CSV файле
+ *
+ */
+
 public class SearchCSV {
     String pathToCSV;
     CSVReader reader;
@@ -53,7 +60,7 @@ public class SearchCSV {
         return value;
     }
 
-    public void setAllSubUnits(MeasurementUnit unit) throws IOException {
+    public void setAllSubUnits(MeasurementUnit unit) throws IOException { // рекурсией находим вся связанные элементы
         if (unit.getAllUnits().size() != 0) {
             for(MeasurementUnit u: unit.getAllUnits()) {
                 createMeasurementUnit(u);

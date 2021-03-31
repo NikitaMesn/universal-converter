@@ -1,10 +1,14 @@
 package org;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+
+/*
+ * Задачи класса:
+ * 1. Хранения связи между единицами измерений
+ *
+ */
+
 
 public class MeasurementUnit {
     private final String name;
@@ -12,7 +16,7 @@ public class MeasurementUnit {
     private final List<MeasurementUnit> units = new ArrayList<>();
     private final List<String> unitsName = new ArrayList<>();
     private MeasurementUnit superUnit;
-    private static List<MeasurementUnit> allUnits = new ArrayList<>();
+    private static List<MeasurementUnit> allUnits = new ArrayList<>(); // хранятся необходимые Unit для проведения конвертации
 
 
     public MeasurementUnit(String name, String value, MeasurementUnit referUnit) {
@@ -27,6 +31,10 @@ public class MeasurementUnit {
         this.name = name;
     }
 
+    public MeasurementUnit() {
+        this.name = null;
+    }
+
     public List<MeasurementUnit> getAllUnits() {
         return units;
     }
@@ -35,13 +43,13 @@ public class MeasurementUnit {
         return unitsName;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void addUnit(MeasurementUnit unit) {
         units.add(unit);
         unitsName.add(unit.getName());
-    }
-
-    public String getName() {
-        return name;
     }
 
 
@@ -57,18 +65,6 @@ public class MeasurementUnit {
         return  superUnit.getName();
     }
 
-    public Set<String> getAllNamesSuperUnit() {
-        Set<String> setSuperUnits = new HashSet<>();
-        MeasurementUnit temple = this;
-
-        while (temple.getSuperUnit() != null) {
-            temple = temple.getSuperUnit();
-            setSuperUnits.add(temple.getName());
-        }
-
-        return setSuperUnits;
-    }
-
     public MeasurementUnit getMeasurementUnitByName(String from, String to) {
         for (MeasurementUnit un: allUnits) {
             if (to.equals(un.getName())) {
@@ -79,6 +75,20 @@ public class MeasurementUnit {
         }
         return null;
     }
+
+
+    public Set<String> getAllNamesSuperUnit() {
+        Set<String> setOfSuperUnits = new HashSet<>();
+        MeasurementUnit temple = this;
+
+        while (temple.getSuperUnit() != null) {
+            temple = temple.getSuperUnit();
+            setOfSuperUnits.add(temple.getName());
+        }
+
+        return setOfSuperUnits;
+    }
+
 
 
     public static BigDecimal getConvertValue(MeasurementUnit from, MeasurementUnit to) {

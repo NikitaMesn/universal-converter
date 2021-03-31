@@ -20,12 +20,13 @@ class EchoHandler implements HttpHandler {
             try (OutputStream response = exchange.getResponseBody();
                  BufferedReader reader = new BufferedReader(new InputStreamReader(exchange.getRequestBody()))) {
 
-                handleJson = new ConvertJson(reader);
-                conv = new Converter(pathToCSV, handleJson.getMapPost());
-
                 try {
+                    handleJson = new ConvertJson(reader);
+                    conv = new Converter(pathToCSV, handleJson.getMapPost());
+
                     String res = conv.makeConvert();
                     byte[] resByte = res.getBytes(StandardCharsets.UTF_8);
+
                     exchange.sendResponseHeaders(200, resByte.length);
                     response.write(resByte);
                     response.close();
@@ -33,7 +34,7 @@ class EchoHandler implements HttpHandler {
                 } catch (Exception404 ex404) {
                     //ex404.printStackTrace();
                     exchange.sendResponseHeaders(404, 0);
-                } catch (Exception400 ex400) {
+                } catch (Exception400 | IOException ex400) {
                     //ex400.printStackTrace();
                     exchange.sendResponseHeaders(400, 0);
                 }
