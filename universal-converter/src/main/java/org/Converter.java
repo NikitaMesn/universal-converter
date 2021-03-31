@@ -120,7 +120,9 @@ public class Converter {
         List<String> numerator = chekNumDem().get("numerator");
         List<String> denominator = chekNumDem().get("denominator");
 
-        if (numerator.size() == 0 && denominator.size() == 0 ) return BigDecimal.ONE.toString();
+        if (numerator.size() == 0 && denominator.size() == 0 ) {
+            return BigDecimal.ONE.toString();
+        }
 
         for (String num : numerator) {
 
@@ -149,6 +151,8 @@ public class Converter {
         if (result.scale()<0)
             result= result.setScale(0);
 
+
+        MeasurementUnit.dellAllUnit();
         return result.toPlainString();
     }
 }

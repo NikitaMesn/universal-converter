@@ -15,7 +15,7 @@ public class Main
             HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
             server.createContext("/convert", new EchoHandler(args[0]));
 
-            server.setExecutor(null);
+            server.setExecutor(null);//создал однопоточный сервер
             server.start();
 
             Scanner input = new Scanner(System.in);

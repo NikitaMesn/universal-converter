@@ -7,6 +7,7 @@ import java.util.*;
  * Задачи класса:
  * 1. Хранения связи между единицами измерений
  *
+ *
  */
 
 
@@ -101,6 +102,11 @@ public class MeasurementUnit {
         }
 
         return value.setScale(15, BigDecimal.ROUND_HALF_UP);
+    }
+
+
+    public static void dellAllUnit() {
+        allUnits.clear();
     }
 
 }
