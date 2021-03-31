@@ -33,15 +33,15 @@ class EchoHandler implements HttpHandler {
 
                 } catch (Exception404 ex404) {
                     //ex404.printStackTrace();
-                    exchange.sendResponseHeaders(404, 0);
+                    exchange.sendResponseHeaders(404, -1);
                 } catch (Exception400 | IOException ex400) {
                     //ex400.printStackTrace();
-                    exchange.sendResponseHeaders(400, 0);
+                    exchange.sendResponseHeaders(400, -1);
                 }
 
             } catch (IOException e) {
                 //e.printStackTrace();
-                exchange.sendResponseHeaders(400, 0);
+                exchange.sendResponseHeaders(400, -1);
             }
         }
         exchange.close();
