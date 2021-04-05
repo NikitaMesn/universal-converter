@@ -135,7 +135,9 @@ public class Converter {
 
                 searchUnit = new MeasurementUnit();
 
-                searchUnit = searchUnit.getMeasurementUnitByName(num, den);
+                searchUnit = searchUnit.getMeasurementUnitByName(
+                        den,  unit);
+
                 if (searchUnit != null) break;
 
             }
@@ -152,7 +154,7 @@ public class Converter {
             result= result.setScale(0);
 
 
-        MeasurementUnit.dellAllUnit();
+
         return result.toPlainString();
     }
 }

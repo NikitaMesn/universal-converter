@@ -12,7 +12,7 @@ public class Main
         if (args.length == 0 || !args[0].contains(".csv")) {
             System.out.println("Please specify valid CSV file path");
         } else {
-            HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
+            HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
             server.createContext("/convert", new EchoHandler(args[0]));
 
             server.setExecutor(null);//создал однопоточный сервер

@@ -17,14 +17,14 @@ public class MeasurementUnit {
     private final List<MeasurementUnit> units = new ArrayList<>();
     private final List<String> unitsName = new ArrayList<>();
     private MeasurementUnit superUnit;
-    private static List<MeasurementUnit> allUnits = new ArrayList<>(); // хранятся необходимые Unit для проведения конвертации
+    private MeasurementUnit subUnit;
 
 
     public MeasurementUnit(String name, String value, MeasurementUnit referUnit) {
         this.name = name;
         this.superUnit = referUnit;
         this.valueToSuperUnit = new BigDecimal(value);
-        allUnits.add(this); //создал список из всех новых unit, чтобы проще найти нужный
+
 
     }
 
@@ -66,15 +66,26 @@ public class MeasurementUnit {
         return  superUnit.getName();
     }
 
-    public MeasurementUnit getMeasurementUnitByName(String from, String to) {
-        for (MeasurementUnit un: allUnits) {
-            if (to.equals(un.getName())) {
-                if(un.getAllNamesSuperUnit().contains(from)) {
-                    return un;
+
+
+    private void setMeasurementUnitByName(String to, MeasurementUnit mainUnit) {
+
+        if (mainUnit.getName().equals(to)) {
+            this.subUnit = mainUnit;
+
+        } else {
+            if (mainUnit.getAllUnits().size() != 0); {
+                for (MeasurementUnit unit: mainUnit.getAllUnits()) {
+                    getMeasurementUnitByName(to,  unit);
                 }
             }
         }
-        return null;
+
+    }
+
+    public MeasurementUnit getMeasurementUnitByName(String to, MeasurementUnit mainUnit) {
+        setMeasurementUnitByName(to, mainUnit);
+        return subUnit;
     }
 
 
@@ -105,9 +116,7 @@ public class MeasurementUnit {
     }
 
 
-    public static void dellAllUnit() {
-        allUnits.clear();
-    }
+
 
 }
 
