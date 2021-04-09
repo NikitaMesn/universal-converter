@@ -107,7 +107,6 @@ S,T,value
 - Запуск сервиса осуществляется командой `java -jar universal-converter-1.0.0.jar /path/to/file.csv`,
 где `/path/to/file.csv` – путь до файла с правилами конвертации.
 - Сервис  принимает HTTP-запросы на стандартном порту (`80`).
-- Исходный код соответствует [Java Code Conventions](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
-и [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html).
+
 
 
