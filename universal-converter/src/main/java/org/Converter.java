@@ -35,7 +35,7 @@ public class Converter {
 
         } else if (from.contains("1/")) {
 
-            numerator.addAll(Arrays.asList(from.split("\\*")));// в задание сказано что могут быть герцы
+            numerator.addAll(Arrays.asList(from.split("\\*")));
         } else if (from.contains("/")) {
             String[] fr = from.split("/");
             if (fr.length > 2) throw new Exception400();
