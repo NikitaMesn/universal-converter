@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <!-- Required meta tags --> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <!-- Material Design for Bootstrap fonts and icons --> 
+  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.75f912b2cbba.css"> 
+  <link rel="stylesheet" href="/static/fontawesome/css/all.5fd5e45c6313.css"> 
+  <link rel="stylesheet" href="/static/fonts/Roboto:300,400,500,700.3f800ce36266"> 
+  <script data-ad-client="ca-pub-1392785890131419" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+  <!-- <link href="/static/css/debug-bootstrap.43f7fd3dc10e.css" rel="stylesheet"> --> 
+  <title> Вопросы - CodeRoad</title> 
+  <meta name="description" content="Ответы/Вопросы на всевозможные IT вопросы"> 
+  <style>
+
+.container-fluid , .navbar {
+	max-width: 1800px
+}
+
+.logo {
+	width: 40px;
+	height: 40px;
+	font-size: 1.5rem;
+	float: left;
+}
+#content {
+	min-height: 1100px;
+}
+.navbar {
+	min-height: 60px;
+}
+
+a:hover, a:hover.nav-link{
+	text-decoration: underline;
+}
+
+a, a:VISITED, .btn-link {
+	text-decoration: none;
+	color: #1675d1;
+}
+
+a.btn-secondary {
+	color: #fff;
+} 
+.btn-outline-light:not(:disabled):not(.disabled).active {
+	background-color: rgba(0, 0, 0, 0.03);
+	border-color: rgba(0, 0, 0, 0.125);
+}
+.btn-outline-light {
+	border-color: rgba(0, 0, 0, 0.125);
+	color: #1675d1;
+}
+.form-control:focus {
+	box-shadow: none;
+}
+
+.form-control-underlined {
+	border-width: 0;
+	border-bottom-width: 5px;
+	border-radius: 0;
+	padding-left: 0;
+}
+.autocomplete, .autocomplete.open{
+	z-index: 1022;
+	color: black;
+}
+ol {
+	padding-left: 1.5rem;
+}
+ol li {
+	padding-left: 0.5rem;
+}
+em {
+	font-weight: 600;
+}
+strong {
+	font-weight: 700;
+}
+html, body {
+	height: 100%;
+}
+
+.post-text ul p:last-of-type, .wmd-preview ul p:last-of-type, .post-text ol p:last-of-type, .wmd-preview ol p:last-of-type {
+margin-bottom: 0;
+}
+h1, .h1 {
+font-size: 2.2rem;
+}
+</style> 
+  <style>
+</style> 
+ </head> 
+ <body> 
+  <nav class="navbar navbar-expand navbar-dark bg-primary text-light shadow-sm sticky-top" style="white-space: nowrap"> 
+   <div class="container-fluid"> 
+    <a class="btn p-0 pb-1 d-lg-none" data-toggle="collapse" href="#navbarToggleExternalContent" role="button" aria-expanded="false" aria-controls="navbarToggleExternalContent"> <span class="navbar-toggler-icon"></span> </a> 
+    <div class="col-lg-2 d-none d-lg-flex left-menu align-items-center"> 
+     <div class="logo border border-white rounded d-none d-xl-flex justify-content-center align-items-center"> 
+      <a href="/"><i class="fas fa-code text-white"></i></a> 
+     </div> 
+     <a class="navbar-brand text-light pl-2" href="/">CodeRoad</a> 
+    </div> 
+    <form class="navbar-form w-100 pl-3 pr-2" id="search_form" method="get" action="/search/" onsubmit="javascript: return submit_form()"> 
+     <div class="p-1 pl-2 pr-3 bg-light rounded rounded-pill  "> 
+      <div class="input-group"> 
+       <div class="input-group-prepend"> 
+        <button id="button-addon1" type="submit" class="btn btn-link"> <i class="fa fa-search"></i> </button> 
+       </div> 
+       <input type="search" placeholder="Что вы ищете?" aria-describedby="button-addon1" class="form-control border-0 bg-light" data-autocomplete="/search/autocomplete/" id="search_text" name="q" autocomplete="off"> 
+      </div> 
+     </div> 
+    </form> 
+    <div class="col-lg-2 d-none d-xl-block left-menu text-center"> 
+     <a class="text-light" href="/about.html">О нас</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+     <a class="text-light" href="/contacts.html">Контакты</a> 
+    </div> 
+   </div> 
+  </nav> 
+  <div class="container-fluid ml-0 shadow"> 
+   <div class="row align-items-start navbar-expand-lg bg-primary"> 
+    <div class="col-sm collapse navbar-collapse pt-4 text-light left-menu bg-primary" id="navbarToggleExternalContent"> 
+     <nav class="sidebar"> 
+      <div class="row"> 
+       <div class="col col-lg-12"> 
+        <a class="nav-link text-light navbar-brand" href="/">Главная</a>
+        <br> 
+        <a class="nav-link text-light navbar-brand" href="/list/?page=1&amp;sort=view">Вопросы</a> 
+        <ul class="d-none d-sm-block d-md-block"> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=date">Новые</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view">Популярные</a></li> 
+        </ul> 
+        <a class="nav-link text-light navbar-brand" href="/tags/">Теги</a> 
+       </div> 
+       <div class="col col-lg-12"> 
+        <ul class="d-none d-sm-block d-md-block py-0 my-0"> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=javascript">javascript</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=java">java</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=c%23">c#</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=php">php</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=python">python</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=android">android</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=jquery">jquery</a></li> 
+        </ul> 
+       </div> 
+       <div class="col col-lg-12"> 
+        <ul class="d-none d-sm-block py-0 my-0"> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=html">html</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=c%2b%2b">c++</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=ios">ios</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=css">css</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=mysql">mysql</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=sql">sql</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=asp.net">asp.net</a></li> 
+        </ul> 
+       </div> 
+       <div class="col d-none d-md-block col-lg-12"> 
+        <ul class="py-0 my-0"> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=c">c</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=r">r</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=ruby-on-rails">ruby-on-rails</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=arrays">arrays</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=node.js">node.js</a></li> 
+         <li><a class="nav-link text-light pl-1" href="/list/?page=1&amp;sort=view&amp;tag=.net">.net</a></li> 
+        </ul> 
+       </div> 
+      </div>
+     </nav> 
+    </div> 
+    <div class="col-12 col-lg-10 position-relative border-left bg-white"> 
+     <div class="row h-100"> 
+      <div id="content" class="col-12 col-12 h-100 px-4 pb-5 pt-4"> 
+       <div class="row	 justify-content-center"> 
+        <h1 class="py-4">Перевод популярных вопросов со StackOverflow</h1> 
+       </div> 
+       <div class="ads"> 
+        <p align="center"> <iframe data-id="coderoad.ru_1150x280_billboard_responsive_DFP" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" width="1" height="1"></iframe> <script>
+		    (function () {
+		        var size='970x250|300x250',
+		            adunit = 'coderoad.ru_1150x280_billboard_responsive_DFP',
+		            childNetworkId = '22423003278',
+		            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+		</script> </p> 
+       </div> 
+       <div class="row	 justify-content-center"> 
+        <form class="navbar-form w-75 pl-3 pr-2 my-5" id="search_form" method="get" action="/search/" onsubmit="javascript: return submit_form()"> 
+         <div class="p-1 pl-2 pr-3 bg-light rounded rounded-pill border shadow-sm "> 
+          <div class="input-group"> 
+           <div class="input-group-prepend"> 
+            <button id="button-addon1" type="submit" class="btn btn-link"> <i class="fa fa-search"></i> </button> 
+           </div> 
+           <input type="search" placeholder="Что вы ищете?" aria-describedby="button-addon1" class="form-control border-0 bg-light" data-autocomplete="/search/autocomplete/" id="search_text" name="q" autocomplete="off"> 
+          </div> 
+         </div> 
+        </form> 
+       </div> 
+       <div class="row pt-4 justify-content-center"> 
+        <div class="col-md-6 col-sm-12 col-xs-12 py-4"> 
+         <div class="card shadow-sm"> 
+          <div class="card-header justify-content-between d-flex"> 
+           <h4>Популярные вопросы</h4> 
+          </div> 
+          <div class="card-body"> 
+           <ul> 
+            <li> <a href="/927358/Как-отменить-последние-локальные-коммиты-в-Git" class="nav-link">Как отменить последние локальные коммиты в Git?</a> </li> 
+            <li> <a href="/2003505/Как-удалить-Git-branch-локально-и-удаленно" class="nav-link">Как удалить Git branch локально и удаленно?</a> </li> 
+            <li> <a href="/5767325/Как-я-могу-удалить-определенный-элемент-из-массива" class="nav-link">Как я могу удалить определенный элемент из массива?</a> </li> 
+            <li> <a href="/16956810/Как-найти-все-файлы-содержащие-определенный-текст-на-Linux" class="nav-link">Как найти все файлы, содержащие определенный текст на Linux?</a> </li> 
+            <li> <a href="/2906582/Как-создать-кнопку-HTML-которая-действует-как-ссылка" class="nav-link">Как создать кнопку HTML, которая действует как ссылка?</a> </li> 
+            <li> <a href="/4114095/Как-вернуть-репозиторий-Git-к-предыдущему-коммиту" class="nav-link">Как вернуть репозиторий Git к предыдущему коммиту?</a> </li> 
+            <li> <a href="/503093/Как-сделать-перенаправление-на-другую-веб-страницу" class="nav-link">Как сделать перенаправление на другую веб-страницу?</a> </li> 
+            <li> <a href="/1789945/Как-проверить-содержит-ли-строка-подстроку-в-JavaScript" class="nav-link">Как проверить, содержит ли строка подстроку в JavaScript?</a> </li> 
+            <li> <a href="/5585779/Как-преобразовать-строку-в-int-в-Java" class="nav-link">Как преобразовать строку в int в Java?</a> </li> 
+            <li> <a href="/1783405/Как-мне-проверить-удаленный-Git-branch" class="nav-link">Как мне проверить удаленный Git branch?</a> </li> 
+           </ul> 
+           <br> 
+           <a href="/list/?page=1&amp;sort=view">далее</a> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="col-md-6 col-sm-12 col-xs-12 py-4"> 
+         <div class="card shadow-sm"> 
+          <div class="card-header justify-content-between d-flex"> 
+           <h4>Обновленые вопросы</h4> 
+          </div> 
+          <div class="card-body"> 
+           <ul> 
+            <li> <a href="/14391272/Нет-таких-подразумевает-встроенный" class="nav-link">Нет таких подразумевает встроенный?</a> </li> 
+            <li> <a href="/57393491/Как-включить-автомасштабирование-v2beta2-в-google-cloud" class="nav-link">Как включить автомасштабирование/v2beta2 в google cloud</a> </li> 
+            <li> <a href="/57405433/Flutter-как-сохранить-вход-пользователя-в-систему-и-сделать-выход-из-системы" class="nav-link">Flutter : как сохранить вход пользователя в систему и сделать выход из системы</a> </li> 
+            <li> <a href="/31675420/Комплект-круглый-угол-изображения-в-ImageView" class="nav-link">Комплект круглый угол изображения в ImageView</a> </li> 
+            <li> <a href="/54358871/Как-добавить-комментарии-в-файл-env" class="nav-link">Как добавить комментарии в файл .env?</a> </li> 
+            <li> <a href="/57404224/Ошибка-ESLint-при-использовании-необязательной-привязки-catch" class="nav-link">Ошибка ESLint при использовании необязательной привязки catch</a> </li> 
+            <li> <a href="/55034145/Как-я-могу-вычислить-курс-N-W-S-E-с-учетом-данных-магнитометра-и-акселерометра" class="nav-link">Как я могу вычислить курс (N/W/S/E) с учетом данных магнитометра и...</a> </li> 
+            <li> <a href="/57403069/Синтаксический-анализ-вложенных-данных-JSON-в-столбце-Kusto" class="nav-link">Синтаксический анализ вложенных данных JSON в столбце Kusto</a> </li> 
+            <li> <a href="/50575215/Доступ-к-стеку-истории-React-Router" class="nav-link">Доступ к стеку истории React Router</a> </li> 
+            <li> <a href="/33345529/Переместить-нули-в-конец-массива-в-javascript-как-вернуть-nothing" class="nav-link">Переместить нули в конец массива в javascript - как вернуть nothing?</a> </li> 
+           </ul> 
+           <br> 
+           <a href="/list/?page=1&amp;sort=date">далее</a> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="row	"> 
+        <h3 class="pt-4 pl-5">Популярные теги</h3> 
+       </div> 
+       <div class="row	 justify-content-center"> 
+        <div class="col-md-4 col-sm-6 col-xs-12 py-4 "> 
+         <div class="card shadow-sm"> 
+          <div class="card-header justify-content-between d-flex"> 
+           <a class="btn btn-secondary btn-sm font-weight-bold" href="/list/?page=1&amp;sort=view&amp;tag=javascript">javascript</a> 
+           <span class="text-muted text-small"> &nbsp; 1817846</span> 
+          </div> 
+          <div class="card-body"> 
+           <p class="truncate-smart"> JavaScript (не путать с Java)-это высокоуровневый, динамичный, многопарадигмальный, объектно-ориентированный, основанный на прототипах, слабо типизированный и интерпретируемый язык, используемый как для клиентских, так и для серверных сценариев. Его основное применение заключается в визуализации и манипулировании веб-страницами. Используйте этот тег для вопросов, касающихся ECMAScript и его... </p> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="col-md-4 col-sm-6 col-xs-12 py-4 ads"> 
+         <div class="card shadow-sm" style="height:400px"> 
+          <p align="center"> <iframe data-id="coderoad.ru_360x250_tags_responsive_DFP" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" width="1" height="1"></iframe> <script>
+    (function () {
+        var size='300x250',
+            adunit = 'coderoad.ru_360x250_tags_responsive_DFP',
+            childNetworkId = '22423003278',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script> </p> 
+         </div> 
+        </div> 
+        <div class="col-md-4 col-sm-6 col-xs-12 py-4 "> 
+         <div class="card shadow-sm"> 
+          <div class="card-header justify-content-between d-flex"> 
+           <a class="btn btn-secondary btn-sm font-weight-bold" href="/list/?page=1&amp;sort=view&amp;tag=java">java</a> 
+           <span class="text-muted text-small"> &nbsp; 1552980</span> 
+          </div> 
+          <div class="card-body"> 
+           <p class="truncate-smart"> Java (не путать с JavaScript, JScript или JS)-это универсальный, независимый от платформы, статически типизированный объектно-ориентированный язык программирования, предназначенный для использования совместно с виртуальной машиной Java (JVM). "Java platform"-это название вычислительной системы, в которой установлены инструменты для разработки и запуска программ Java. Используйте этот тег для... </p> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="col-md-4 col-sm-6 col-xs-12 py-4 ads"> 
+         <div class="card shadow-sm" style="height:400px"> 
+          <p align="center"> <iframe data-id="coderoad.ru_360x250_tags_responsive_DFP" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" width="1" height="1"></iframe> <script>
+    (function () {
+        var size='300x250',
+            adunit = 'coderoad.ru_360x250_tags_responsive_DFP',
+            childNetworkId = '22423003278',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script> </p> 
+         </div> 
+        </div> 
+        <div class="col-md-4 col-sm-6 col-xs-12 py-4 "> 
+         <div class="card shadow-sm"> 
+          <div class="card-header justify-content-between d-flex"> 
+           <a class="btn btn-secondary btn-sm font-weight-bold" href="/list/?page=1&amp;sort=view&amp;tag=c%23">c#</a> 
+           <span class="text-muted text-small"> &nbsp; 1316452</span> 
+          </div> 
+          <div class="card-body"> 
+           <p class="truncate-smart"> C# (произносится как "see sharp")-это высокоуровневый, статически типизированный, многопарадигмальный язык программирования, разработанный корпорацией Microsoft. Код C# обычно нацелен на семейство инструментов и времени выполнения Microsoft .NET, которое включает в себя платформу .NET и ядро .NET. Используйте этот тег для вопросов о коде, написанном в формальной спецификации C# или C#'s. </p> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="col-md-4 col-sm-6 col-xs-12 py-4 "> 
+         <div class="card shadow-sm"> 
+          <div class="card-header justify-content-between d-flex"> 
+           <a class="btn btn-secondary btn-sm font-weight-bold" href="/list/?page=1&amp;sort=view&amp;tag=php">php</a> 
+           <span class="text-muted text-small"> &nbsp; 1286873</span> 
+          </div> 
+          <div class="card-body"> 
+           <p class="truncate-smart"> PHP (PHP: гипертекстовый препроцессор)-широко используемый, высокоуровневый, динамический, объектно-ориентированный и интерпретируемый скриптовый язык, предназначенный в основном для серверной веб-разработки. </p> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="col-md-4 col-sm-6 col-xs-12 py-4 "> 
+         <div class="card shadow-sm"> 
+          <div class="card-header justify-content-between d-flex"> 
+           <a class="btn btn-secondary btn-sm font-weight-bold" href="/list/?page=1&amp;sort=view&amp;tag=android">android</a> 
+           <span class="text-muted text-small"> &nbsp; 1197092</span> 
+          </div> 
+          <div class="card-body"> 
+           <p class="truncate-smart"> Android-мобильная операционная система Google, используемая для программирования или разработки цифровых устройств (смартфоны, планшеты, автомобили, TVs, одежда, стекло, IoT). По всем вопросам, касающимся Android, Android использование специальных тегов, таких как android-намерение, android-активность, android-адаптера и т. д. Для вопросов, не связанных с разработкой или программированием, но... </p> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="col-md-4 col-sm-6 col-xs-12 py-4 "> 
+         <div class="card shadow-sm"> 
+          <div class="card-header justify-content-between d-flex"> 
+           <a class="btn btn-secondary btn-sm font-weight-bold" href="/list/?page=1&amp;sort=view&amp;tag=python">python</a> 
+           <span class="text-muted text-small"> &nbsp; 1180426</span> 
+          </div> 
+          <div class="card-body"> 
+           <p class="truncate-smart"> Python-это многопарадигмальный, динамически типизированный, универсальный язык программирования, предназначенный для быстрого (изучения, использования и понимания) применения чистого и единообразного синтаксиса. Обычно используются две похожие, но несовместимые версии Python, Python 2.7 и 3.x. Для специфичных для версии вопросов Python добавьте тег [python-2.7] или [python-3.x]. При использовании... </p> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="col-md-4 col-sm-6 col-xs-12 py-4 ads"> 
+         <div class="card shadow-sm" style="height:400px"> 
+          <p align="center"> <iframe data-id="coderoad.ru_360x250_tags_responsive_DFP" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" width="1" height="1"></iframe> <script>
+    (function () {
+        var size='300x250',
+            adunit = 'coderoad.ru_360x250_tags_responsive_DFP',
+            childNetworkId = '22423003278',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script> </p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <iframe data-id="coderoad.ru_728x90_sticky_anchor_DFP" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" width="1" height="1"></iframe> 
+  <script>
+    (function () {
+        var size='728x90|320x100',
+            adunit = 'coderoad.ru_728x90_sticky_anchor_DFP',
+            childNetworkId = '22423003278',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script> 
+  <!-- Optional JavaScript --> 
+  <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+  <script src="/static/js/jquery-3.2.1.slim.min.5f48fc77cac9.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
+  <script src="/static/bootstrap/js/bootstrap.bundle.min.a454220fc070.js"></script> 
+  <link rel="stylesheet" href="/static/css/autocomplete-2.7.0.889b07d03339.css" type="text/css"> 
+  <script src="/static/js/autocomplete-2.7.0.49a72778714e.js"></script> 
+  <script src="/static/js/jquery.iframetracker.min.c28ccca6de79.js"></script> 
+  <script type="text/javascript">
+function submit_form() {
+	if (document.querySelector("div.autocomplete li.active")) {
+		return false;
+	} else {
+		document.getElementById('search_form').submit();	
+	}
+}
+AutoComplete({
+     EmptyMessage: "No item found",
+     Url: '/search/autocomplete/',
+     _Select : function(item) {
+    	 if (item.hasAttribute("data-autocomplete-value")) {
+             this.Input.value = item.getAttribute("data-autocomplete-value");
+         }
+         else {
+             this.Input.value = item.innerHTML;
+         }
+         this.Input.setAttribute("data-autocomplete-old-value", this.Input.value);
+    	 document.getElementById('search_form').submit();
+     },
+     _Focus: function () {
+         var oldValue = this.Input.getAttribute("data-autocomplete-old-value");
+         if ((!oldValue || this.Input.value != oldValue) && this._MinChars() <= this.Input.value.length) {
+             this.DOMResults.setAttribute("class", "autocomplete open shadow");
+         }
+     },
+     _Position: function () {
+         this.DOMResults.setAttribute("class", "autocomplete");
+         this.DOMResults.setAttribute("style", "top:" + (this.Input.offsetTop + this.Input.offsetHeight+5) + "px;left:" + this.Input.offsetLeft + "px;width:" + (this.Input.clientWidth-25) + "px;");
+     },
+     _RenderResponseItems: function (response) {
+         var ul = document.createElement("ul"), li = document.createElement("li"), limit = this._Limit();
+         ul.setAttribute("class", "mdc-list");
+         // Order
+         if (limit < 0) {
+             response = response.reverse();
+         }
+         else if (limit === 0) {
+             limit = response.length;
+         }
+         for (var item = 0; item < Math.min(Math.abs(limit), response.length); item++) {
+             li.innerHTML = response[item].Label;
+             li.setAttribute("data-autocomplete-value", response[item].Value);
+             li.setAttribute("class", "mdc-list-item");
+             ul.appendChild(li);
+             li = document.createElement("li");
+         }
+         return ul;
+     },
+});
+
+ </script> 
+  <script type="text/javascript">
+ function copyToClipboard(text, el) {
+	  var copyTest = document.queryCommandSupported('copy');
+	  var elOriginalText = el.attr('data-original-title');
+
+	  if (copyTest === true) {
+	    var copyTextArea = document.createElement("textarea");
+	    copyTextArea.value = text;
+	    document.body.appendChild(copyTextArea);
+	    copyTextArea.select();
+	    try {
+	      var successful = document.execCommand('copy');
+	      var msg = successful ? 'Скопировано!' : 'Whoops, not copied!';
+	      el.attr('data-original-title', msg).tooltip('show');
+	    } catch (err) {
+	      console.log('Oops, unable to copy');
+	    }
+	    document.body.removeChild(copyTextArea);
+	    el.attr('data-original-title', elOriginalText);
+	  } else {
+	    // Fallback if browser doesn't support .execCommand('copy')
+	    window.prompt("Copy to clipboard: Ctrl+C or Command+C, Enter", text);
+	  }
+	}
+
+	$(document).ready(function() {
+	  // Initialize
+	  // ---------------------------------------------------------------------
+
+	  // Tooltips
+	  // Requires Bootstrap 3 for functionality
+	  $('.js-tooltip').tooltip();
+
+	  // Copy to clipboard
+	  // Grab any text in the attribute 'data-copy' and pass it to the 
+	  // copy function
+	  $('.js-copy').click(function() {
+	    var text = $(this).attr('data-copy');
+	    var el = $(this);
+	    copyToClipboard(text, el);
+	  });
+	});
+ </script> 
+  <script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('.ads iframe').iframeTracker({
+			blurCallback: function(event) {
+				// Do something when the iframe is clicked (like firing an XHR request)
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+				    if (this.readyState == 4 && this.status == 200) {
+				       // Typical action to be performed when the document is ready:
+				    }
+				};
+				xhttp.open("GET", "/ads_clicked/?time=" + new Date().getTime(), true);
+				xhttp.send();
+			}
+		});
+	});
+</script> 
+  <!-- Global site tag (gtag.js) - Google Analytics --> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113193516-3"></script> 
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113193516-3');
+  setTimeout("gtag('event', 'view', {'event_category' : 'page',  'event_label' : '15-seconds-view'})",15000);
+</script>  
+ </body>
+</html>
