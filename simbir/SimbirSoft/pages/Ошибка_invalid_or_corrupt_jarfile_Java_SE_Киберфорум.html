@@ -1,0 +1,741 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ru">
+ <head> 
+  <title>Ошибка "invalid or corrupt jarfile" - Java SE - Киберфорум</title> 
+  <link rel="canonical" href="https://www.cyberforum.ru/java-j2se/thread705667.html"> 
+  <base href="https://www.cyberforum.ru/"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="keywords" content="Java SE, Ошибка &quot;invalid or corrupt jarfile&quot;"> 
+  <meta name="description" content="Ошибка &quot;invalid or corrupt jarfile&quot; Java SE Ответ"> 
+  <meta name="viewport" content="width=device-width"> 
+  <link rel="stylesheet" type="text/css" href="//cyberstatic.net/clientscript/vbulletin_css/cyberforum.css"> 
+  <link rel="stylesheet" type="text/css" href="//cyberstatic.net/clientscript/vbulletin_important.css"> 
+  <script>
+<!--
+var SESSIONURL = "s=f975f72c703e138e08eea376ec2e6da4&";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "//cyberstatic.net/images/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script> 
+  <script src="//ajax.googleapis.com/ajax/libs/yui/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+  <script src="//ajax.googleapis.com/ajax/libs/yui/2.9.0/build/connection/connection-min.js"></script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+  <script src="//cyberstatic.net/clientscript/custom/jquery.browser.min.js"></script> 
+  <script src="//cyberstatic.net/clientscript/vbulletin_global.js"></script> 
+  <script src="//cyberstatic.net/clientscript/vbulletin_menu.js"></script> 
+  <script src="//cyberstatic.net/clientscript/vbulletin_vbpost.js"></script> 
+  <script src="//cyberstatic.net/clientscript/vbulletin_post_loader.js"></script> 
+  <script src="//cyberstatic.net/clientscript/vbulletin_md5.js"></script> 
+  <link rel="alternate" type="application/rss+xml" title="Форум программистов и сисадминов Киберфорум RSS Feed" href="https://www.cyberforum.ru/external.php?type=RSS2"> 
+  <link rel="alternate" type="application/rss+xml" title="Java SE (J2SE) - Киберфорум RSS" href="https://www.cyberforum.ru/external.php?type=RSS2&amp;forumids=159"> 
+  <link type="application/opensearchdescription+xml" rel="search" href="https://www.cyberforum.ru/opensearch.xml" title="CyberForum.ru"> 
+  <link rel="stylesheet" href="//cyberstatic.net/clientscript/vbulletin_css/geshi.css" type="text/css" media="screen"> 
+  <link rel="stylesheet" type="text/css" href="//cyberstatic.net/clientscript/vbulletin_css/spoiler.css"> 
+  <script>
+	var IMGDIR_BUTTON = "//cyberstatic.net/images/buttons";
+</script> 
+  <style type="text/css" id="vbulletin_showthread_css">
+	<!--
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	-->
+	</style> 
+ </head> 
+ <body onload=""> 
+  <div style="min-width: 1000px;  margin: 7px 20px 60px 20px;"> 
+   <div> 
+    <div class="page" style="text-align: left;"> 
+     <div style="margin: 0px 3px 0px 3px" align="left"> 
+      <div class="vbmenu_popup" id="vbbloglinks_menu" style="display:none;margin-top:3px" align="left"> 
+       <table cellpadding="4" cellspacing="1" border="0"> 
+        <tbody>
+         <tr> 
+          <td class="vbmenu_option"><a href="https://www.cyberforum.ru/blogs/recent-entries/">Блоги программистов и сисадминов</a></td> 
+         </tr> 
+        </tbody>
+       </table> 
+      </div> 
+      <table class="tborder" cellpadding="5" cellspacing="1" border="0" width="100%" align="center"> 
+       <tbody>
+        <tr> 
+         <td class="alt1" width="100%" style="padding-left: 10px"> <a href="https://www.cyberforum.ru/" style="display: block; float: left; margin: 5px 25px 10px 0px"><img loading="lazy" decoding="async" border="0" src="//cyberstatic.net/images/cyberforum_logo.png" height="50px" alt="Форум программистов, компьютерный форум, киберфорум" title="Форум программистов, компьютерный форум, киберфорум"></a> 
+          <div class="smallfont" style="float: right; margin: 0px 0px 0px 20px;"> 
+           <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,gplus,twitter" data-image="//cyberstatic.net/images/cyberforum_logo.png"></div> 
+          </div> <span class="forumtitle">Java SE (J2SE)</span> 
+          <div class="smallfont">
+           <a href="https://www.cyberforum.ru/" accesskey="1">Форум программистов и сисадминов Киберфорум</a> 
+           <span class="navbar"> &gt; <a href="https://www.cyberforum.ru/programming/">Форум программистов</a></span> 
+           <span class="navbar"> &gt; <a href="https://www.cyberforum.ru/java/">Java</a></span> 
+           <span class="navbar"> &gt; <a href="https://www.cyberforum.ru/java-j2se/">Java SE (J2SE)</a></span> 
+          </div> </td> 
+         <td class="alt2" style="padding: 0px"> 
+          <table cellpadding="5" cellspacing="3" border="0" width="230px"> 
+           <tbody>
+            <tr> 
+             <td class="smallfont" style="white-space: nowrap"><b><a href="https://www.cyberforum.ru/log-in.php" class="forumtitle">Войти</a></b></td> 
+            </tr> 
+            <tr> 
+             <td> <b><a href="https://www.cyberforum.ru/register.php">Регистрация</a></b><br> <a href="https://www.cyberforum.ru/login.php?do=lostpw">Восстановить пароль</a> </td> 
+            </tr> 
+           </tbody>
+          </table> </td> 
+        </tr> 
+       </tbody>
+      </table> 
+      <div class="tborder" style="padding:1px; border-top-width:0px; margin-bottom: 3px;"> 
+       <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center"> 
+        <tbody>
+         <tr align="center"> 
+          <td class="vbmenu_control"><a href="https://www.cyberforum.ru/announcement.php?a=3">Правила</a></td> 
+          <td class="vbmenu_control"><a href="https://www.cyberforum.ru/sitemap.html">Карта</a></td> 
+          <td class="vbmenu_control"><a id="vbbloglinks" href="https://www.cyberforum.ru/blogs/">Блоги</a><script>vbmenu_register("vbbloglinks");</script></td> 
+          <td class="vbmenu_control"><a id="community" href="https://www.cyberforum.ru/java-j2se/thread705667.html?nojs=1#community" accesskey="6">Сообщество</a> <script> vbmenu_register("community"); </script></td> 
+          <td class="vbmenu_control"><a id="navbar_search" href="https://www.cyberforum.ru/search.php" accesskey="4">Поиск</a> <script> vbmenu_register("navbar_search"); </script></td> 
+          <td class="vbmenu_control" width="100%">&nbsp;</td> 
+         </tr> 
+        </tbody>
+       </table> 
+      </div> 
+      <table id="yatopbanner" cellspacing="0" cellpadding="2" border="0" align="center" width="100%" class="tborder" style="margin: 0px 0px 3px 0px;">
+       <tbody>
+        <tr> 
+         <td width="100%" class="alt1" align="center" valign="middle"> 
+          <div id="yandex_ad_R-29317-1" style="display: table; margin: auto"></div> <script>
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-29317-1",
+                renderTo: "yandex_ad_R-29317-1",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script> </td> 
+        </tr>
+       </tbody>
+      </table> 
+      <div class="vbmenu_popup" id="community_menu" style="display:none;margin-top:3px" align="left"> 
+       <table cellpadding="4" cellspacing="1" border="0"> 
+        <tbody>
+         <tr>
+          <td class="thead">Ссылки сообщества</td>
+         </tr> 
+         <tr>
+          <td class="vbmenu_option"><a href="https://www.cyberforum.ru/groups/">Социальные группы</a></td>
+         </tr> 
+         <tr>
+          <td class="vbmenu_option"><a href="https://www.cyberforum.ru/members/albums.html">Изображения и альбомы</a></td>
+         </tr> 
+        </tbody>
+       </table> 
+      </div> 
+      <div class="vbmenu_popup" id="navbar_search_menu" style="display:none;margin-top:3px" align="left"> 
+       <table cellpadding="4" cellspacing="1" border="0" width="320px"> 
+        <tbody>
+         <tr> 
+          <td class="thead">Поиск Yandex по форуму</td> 
+         </tr> 
+         <tr> 
+          <td class="vbmenu_option" title="nohilite"> 
+           <div class="ya-site-form ya-site-form_inited_no" onclick="return {'action':'https://www.cyberforum.ru/yandex.php','arrow':false,'bg':'transparent','fontsize':13,'fg':'#000000','language':'ru','logo':'rb','publicname':'Yandex Site Search #364949','suggest':true,'target':'_blank','tld':'ru','type':2,'usebigdictionary':true,'searchid':364949,'webopt':false,'websearch':false,'input_fg':'#000000','input_bg':'#ffffff','input_fontStyle':'normal','input_fontWeight':'normal','input_placeholder':null,'input_placeholderColor':'#000000','input_borderColor':'#7f9db9'}">
+            <form action="https://yandex.ru/sitesearch" method="get" target="_blank">
+             <input type="hidden" name="searchid" value="364949">
+             <input type="hidden" name="l10n" value="ru">
+             <input type="hidden" name="reqenc" value="">
+             <input type="search" name="text" value="">
+             <input type="submit" value="Найти">
+            </form>
+           </div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script>(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;if((' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1){e.className+=' ya-page_js_yes';}s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script> </td> 
+         </tr> 
+         <tr> 
+          <td class="thead">Поиск Google по форуму</td> 
+         </tr> 
+         <tr> 
+          <td class="vbmenu_option" title="nohilite" width="300px"> <script>
+  (function() {
+    var cx = 'partner-pub-6796001588681838:1260530199';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script> 
+           <gcse:searchbox-only resultsurl="https://www.cyberforum.ru/google.php" newwindow="true"></gcse:searchbox-only> </td> 
+         </tr> 
+         <tr> 
+          <td class="thead">Поиск по форуму</td> 
+         </tr> 
+         <tr> 
+          <td class="vbmenu_option"><a href="https://www.cyberforum.ru/search.php" accesskey="4">Расширенный поиск</a></td> 
+         </tr> 
+        </tbody>
+       </table> 
+      </div> 
+      <div class="vbmenu_popup" id="pagenav_menu" style="display:none"> 
+       <table cellpadding="4" cellspacing="1" border="0"> 
+        <tbody>
+         <tr> 
+          <td class="thead" nowrap>К странице...</td> 
+         </tr> 
+         <tr> 
+          <td class="vbmenu_option" title="nohilite"> 
+           <form action="https://www.cyberforum.ru/index.php" method="get" onsubmit="return this.gotopage()" id="pagenav_form"> 
+            <input type="text" class="bginput smallfont" id="pagenav_itxt" size="4"> 
+            <input type="button" class="button" id="pagenav_ibtn" value="Вперёд"> 
+           </form> </td> 
+         </tr> 
+        </tbody>
+       </table> 
+      </div> 
+      <a name="poststop" id="poststop"></a> 
+      <div style="margin: 0px 0px 3px 0px;"></div> 
+      <table class="tborder" cellpadding="5" cellspacing="1" border="0" width="100%" align="center" style="border-bottom-width:0px"> 
+       <tbody>
+        <tr> 
+         <td class="tcat" width="100%"> 
+          <div class="smallfont">
+            &nbsp; 
+          </div> </td> 
+         <td class="vbmenu_control" id="threadrating" nowrap> <span id="threadrating_current"> Рейтинг&nbsp;<span title="Средняя оценка">4.51</span>/<span title="Всего голосов">72</span>: <img loading="lazy" decoding="async" class="inlineimg" src="//cyberstatic.net/images/rating/rating_5.gif" alt="Рейтинг темы: голосов - 72, средняя оценка - 4.51" border="0"> </span> </td> 
+        </tr> 
+       </tbody>
+      </table> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="posts"> 
+    <div> 
+     <div class="page" style="text-align: left;"> 
+      <div style="margin: 0px 3px 0px 3px" align="left"> 
+       <div id="edit3738430" style="padding:0px 0px 3px 0px"> 
+        <!-- this is not the last post shown on the page --> 
+        <table id="post3738430" class="tborder" cellpadding="5" cellspacing="0" border="0" width="100%" align="center"> 
+         <tbody>
+          <tr valign="top"> 
+           <td class="alt2" width="170px" style="border-right: 1px solid #AAAAAA;" rowspan="3"> 
+            <div>
+              zv_coder 
+            </div> 
+            <div class="smallfont" style="margin-top: 2px;"> 
+             <!-- show awards --> 
+             <!-- /show awards --> 
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td class="alt2 smallfont" style="font-weight:normal; border-bottom: 1px solid #AAAAAA; border-right: 0px; padding: 3px 5px 3px 5px;" height="15px"> </td> 
+           <td class="alt2 smallfont" style="font-weight: normal; border-bottom: 1px solid #AAAAAA; border-right: 0px; padding: 3px 5px 3px 5px; text-align: right;" width="30px" height="15px"> <a href="https://www.cyberforum.ru/post3738430.html" target="_blank" id="postcount3738430" name="1"><b>1</b></a> </td> 
+          </tr> 
+          <tr valign="top"> 
+           <td class="alt1" colspan="2" id="td_post_3738430" style="padding-top: 3px;"> <h1 style="color: #3774A4">Ошибка "invalid or corrupt jarfile"</h1> 
+            <div class="smallfont shade" style="margin: 10px 0px 0px 30px">
+             22.11.2012, 17:01. 
+             <b>Показов</b> 15084. 
+             <b>Ответов</b> 
+             <a target="_blank" href="https://www.cyberforum.ru/threadposts705667.html">1</a>
+            </div> 
+            <div class="smallfont shade" style="margin: 5px 0px 0px 30px">
+             <b>Метки</b> нет 
+             <img loading="lazy" decoding="async" src="//cyberstatic.net/images/misc/11x11progress.gif" id="tag_form_progress" class="inlineimg" style="display:none" alt=""> (
+             <a href="https://www.cyberforum.ru/tags/">Все метки</a>)
+            </div> 
+            <hr size="1" style="color: #AAAAAA; margin: 7px 0px 10px 0px"> 
+            <div id="post_message_3738430" style="margin: 2px 2px 2px 5px;">
+              Написал программу на JDeveloper, Использовал сторонее class-файли. Со среды все запускается все хорошо но сам собраный jar-файл при запуске выдает ошибку "invalid or corrupt jarfile". Как исправить ситуацию? 
+            </div> 
+            <div style="margin-top: 5px"> 
+            </div> <p>Помощь в написании контрольных, курсовых и дипломных работ <a target="_blank" href="https://www.cyberforum.ru/edu_order.php">здесь</a>.</p> </td> 
+          </tr> 
+         </tbody>
+        </table> 
+        <div style="margin: 3px 0px 3px 0px; display: block"> 
+         <table class="tborder" cellpadding="5" cellspacing="0" border="0" width="100%"> 
+          <tbody>
+           <tr valign="top"> 
+            <td class="alt2" width="170px" style="border-right: 1px solid #AAAAAA;"> </td> 
+            <td class="alt1" align="left"> 
+             <div style="display: table; margin-right: auto"> 
+              <div data-id="_mwayss-f47509295535dfe2b0798178893c6363"></div> 
+              <script>      
+(function(window, document, undefined) {
+    var script_tag = document.createElement('script');
+    script_tag.src = 'https://ad.mox.tv/mox/mwayss_invocation.min.js?pzoneid=1441&height=405&width=720&tld=cyberforum.ru&ctype=div';
+    var container = document.querySelectorAll('[data-id=_mwayss-f47509295535dfe2b0798178893c6363]')[0];    
+    container.setAttribute('id', (container.getAttribute('data-id')+(new Date()).getTime()));
+    container.removeAttribute('data-id');
+    container.parentNode.insertBefore(script_tag, container);
+})(window, document);
+</script> 
+             </div> </td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+        <div style="margin: 3px 0px 0px 0px"> 
+         <table class="tborder" cellpadding="5" cellspacing="0" border="0" width="100%"> 
+          <tbody>
+           <tr valign="top"> 
+            <td class="alt2" width="170px" style="border-right: 1px solid #AAAAAA;" rowspan="2"> 
+             <div class="smallfont" style="margin-top: 2px;"> 
+              <a class="bigusername" href="https://www.cyberforum.ru/members/20461.html">Programming</a> 
+              <div class="smallfont">
+               Эксперт
+              </div> 
+              <div>
+               <span title="Репутация пользователя"><b>94731</b></span> / 
+               <span title="Благодарности за сообщения">64177</span> / 
+               <span title="Лучшие ответы"><b>26122</b></span>
+              </div> 
+              <div>
+               Регистрация: 12.04.2006
+              </div> 
+              <div>
+               Сообщений: 116,782
+              </div> 
+             </div> </td> 
+            <td class="alt2 smallfont" style="font-weight:normal; border-bottom: 1px solid #AAAAAA; padding: 3px 5px 3px 5px;" height="15px"> 22.11.2012, 17:01 </td> 
+           </tr> 
+           <tr> 
+            <td class="alt1" align="left"> 
+             <div style="margin: 2px 2px 2px 5px;"> 
+              <div style="float: right; margin: 0px 0px 10px 10px"> 
+               <script type="text/javascript" id="munleiik">
+        (function(){
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.src = "//intelaxa.com/t.js?i=lgz4cjpe86clto16p3hf&cb=" + (new String(Math.random())).substring(2,8) + (((new Date()).getTime()));
+            d = document.getElementById("munleiik");
+            d.parentNode.insertBefore(s, d);
+        })();
+    </script> 
+              </div> Ответы с готовыми решениями: 
+              <br> 
+              <p><strong><a target="_blank" href="https://www.cyberforum.ru/java-j2se/thread1975409.html">Ошибка "javac: invalid flag: C:\Users\"</a></strong><br>import java.applet.*; import java.awt.*; public class Exl extends Applet{ public boid init()...</p>
+              <p><strong><a target="_blank" href="https://www.cyberforum.ru/java-j2se/thread1640305.html">Invalid or corrupt jar file</a></strong><br>Я наверное уже 100500-й, кто сталкивается с подобной проблемой. В IntelliJ IDEA-14 создал...</p>
+              <p><img class="inlineimg" src="//cyberstatic.net/images/misc/tick.png" title="Есть решение (1)" border="0" alt=""> <strong><a target="_blank" href="https://www.cyberforum.ru/java-j2se/thread2370176.html">Не компилируется: Syntax error on token "&gt;", invalid AssignmentOperator</a></strong><br>public class j2 { public static void main(String args) { int a=1; int b=2; a&amp;gt;3&amp;amp;&amp;amp;b&amp;gt;3 ?...</p>
+              <p><strong><a target="_blank" href="https://www.cyberforum.ru/java-j2se/thread2079511.html">Ошибка "Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 3"</a></strong><br>Доброго времени суток. Я решил написать программу чисто для себя, но мне постоянно выдает ошибку на...</p> 
+             </div> <span class="thumbs-post-rate" title="Рейтинг сообщения 1">1</span> </td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+        <div id="cyber_adsc1" style="margin: 3px 0px 0px 0px; display: block"> 
+         <table class="tborder" cellpadding="5" cellspacing="0" border="0" width="100%"> 
+          <tbody>
+           <tr valign="top"> 
+            <td class="alt2" width="170px" style="border-right: 1px solid #AAAAAA;"> </td> 
+            <td class="alt1" align="left"> 
+             <table>
+              <tbody>
+               <tr>
+                <td> <script src="//m2d.m2.ai/pg.cyberforum.thread.js" async> </script> 
+                 <div id="cf_thread_midview"></div> 
+                 <div id="cf_thread_mob_midview"></div> </td> 
+                <td> 
+                 <div data-id="_mwayss-2703aa38b8301078d4aac2d6300138f5"></div> <script>      
+    (function(window, document, undefined) {
+        var script_tag = document.createElement('script');
+        script_tag.src = 'https://ad.mox.tv/mox/mwayss_invocation.min.js?pzoneid=5821&height=280&width=336&tld=cyberforum.ru&ctype=iframe';
+        var container = document.querySelectorAll('[data-id=_mwayss-2703aa38b8301078d4aac2d6300138f5]')[0];    
+        container.setAttribute('id', (container.getAttribute('data-id')+(new Date()).getTime()));
+        container.removeAttribute('data-id');
+        container.parentNode.insertBefore(script_tag, container);
+    })(window, document);
+</script> </td>
+               </tr>
+              </tbody>
+             </table> </td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div> 
+     <div class="page" style="text-align: left;"> 
+      <div style="margin: 0px 3px 0px 3px" align="left"> 
+       <div id="edit5213981" style="padding:0px 0px 3px 0px"> 
+        <table id="post5213981" class="tborder" cellpadding="5" cellspacing="0" border="0" width="100%" align="center"> 
+         <tbody>
+          <tr valign="top"> 
+           <td class="alt2" width="170px" style="border-right: 1px solid #AAAAAA;" rowspan="3"> 
+            <div> 
+             <a class="bigusername" href="https://www.cyberforum.ru/members/192253.html"><span id="tagg_192253" style="display:none;">@</span>IceSqueez</a> 
+            </div> 
+            <div class="smallfont">
+             Java, C# - Expert
+            </div> 
+            <div class="smallfont" style="margin-top: 2px;"> 
+             <div>
+              <span id="repdisplay_5213981_192253" title="Репутация пользователя" style="font-weight: bold">69</span> / 
+              <span title="Общая оценка (+69, -0)">69</span> / 
+              <span title="Лучшие ответы" style="font-weight: bold">12</span>
+             </div> 
+             <div>
+              Регистрация: 09.08.2011
+             </div> 
+             <div>
+              Сообщений: 284
+             </div> 
+             <!-- show awards --> 
+             <!-- /show awards --> 
+            </div> </td> 
+          </tr> 
+          <tr> 
+           <td class="alt2 smallfont" style="font-weight:normal; border-bottom: 1px solid #AAAAAA; border-right: 0px; padding: 3px 5px 3px 5px;" height="15px"> 21.10.2013, 16:14 </td> 
+           <td class="alt2 smallfont" style="font-weight: normal; border-bottom: 1px solid #AAAAAA; border-right: 0px; padding: 3px 5px 3px 5px; text-align: right;" width="30px" height="15px"> <a href="https://www.cyberforum.ru/post5213981.html" target="_blank" id="postcount5213981" name="2"><b>2</b></a> </td> 
+          </tr> 
+          <tr valign="top"> 
+           <td class="alt1" colspan="2" id="td_post_5213981" style="padding-top: 3px;"> 
+            <div id="post_message_5213981" style="margin: 2px 2px 2px 5px;">
+              Та же проблема, собирал файл через Ant. В манифест пишу только это
+             <br> 
+             <div style="margin: 5px 10px 5px 30px">
+              <table class="xml">
+               <thead>
+                <tr>
+                 <td colspan="2" class="head">XML</td>
+                </tr>
+               </thead>
+               <tbody>
+                <tr class="li1">
+                 <td>
+                  <div id="349117283" style="height: 73px" class="codeframe">
+                   <table>
+                    <tbody>
+                     <tr class="li1">
+                      <td class="ln" style="padding: 0px 10px 0px 5px;"><pre class="de1">1
+2
+3
+</pre></td>
+                      <td class="de1"><pre class="de1"><span class="sc3"><span class="re1">&lt;manifest<span class="re2">&gt;</span></span></span>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;attribute</span> <span class="re0">name</span>=<span class="st0">"Main-Class:"</span> <span class="re0">value</span>=<span class="st0">"ru.dazz.Boot"</span><span class="re2">/&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;/manifest<span class="re2">&gt;</span></span></span></pre></td>
+                     </tr>
+                    </tbody>
+                   </table>
+                  </div></td>
+                </tr>
+               </tbody>
+              </table>
+             </div>По структуре все та и лежит. Прошу помощи. Срезу использовал Intellij IDEA 12
+             <br> 
+             <br> 
+             <font size="1"><font color="grey"><i>Добавлено через 10 минут</i></font></font>
+             <br> Нашел ошибку сам))) может кому поможет, надо было писать так:
+             <br> 
+             <div style="margin: 5px 10px 5px 30px">
+              <table class="xml">
+               <thead>
+                <tr>
+                 <td colspan="2" class="head">XML</td>
+                </tr>
+               </thead>
+               <tbody>
+                <tr class="li1">
+                 <td>
+                  <div id="622002645" style="height: 73px" class="codeframe">
+                   <table>
+                    <tbody>
+                     <tr class="li1">
+                      <td class="ln" style="padding: 0px 10px 0px 5px;"><pre class="de1">1
+2
+3
+</pre></td>
+                      <td class="de1"><pre class="de1"><span class="sc3"><span class="re1">&lt;manifest<span class="re2">&gt;</span></span></span>
+&nbsp; &nbsp; <span class="sc3"><span class="re1">&lt;attribute</span> <span class="re0">name</span>=<span class="st0">"Main-Class"</span> <span class="re0">value</span>=<span class="st0">"ru.dazz.Boot"</span><span class="re2">/&gt;</span></span>
+<span class="sc3"><span class="re1">&lt;/manifest<span class="re2">&gt;</span></span></span></pre></td>
+                     </tr>
+                    </tbody>
+                   </table>
+                  </div></td>
+                </tr>
+               </tbody>
+              </table>
+             </div>Без двоеточия 
+            </div> 
+            <div style="margin-top: 5px"> 
+             <span id="thumbs_box_5213981"> <span class="post"> <span> <span class="thumbs-post-rate" title="Рейтинг сообщения 0">0</span> </span> </span> </span> 
+            </div> </td> 
+          </tr> 
+         </tbody>
+        </table> 
+        <div style="margin: 3px 0px 0px 0px"> 
+         <table class="tborder" cellpadding="5" cellspacing="0" border="0" width="100%"> 
+          <tbody>
+           <tr valign="top"> 
+            <td class="alt2" width="170px" style="border-right: 1px solid #AAAAAA;" rowspan="2"> 
+             <div class="smallfont" style="margin-top: 2px;"> 
+              <a class="bigusername" href="https://www.cyberforum.ru/members/22622.html">IT_Exp</a> 
+              <div class="smallfont">
+               Эксперт
+              </div> 
+              <div>
+               <span title="Репутация пользователя"><b>87844</b></span> / 
+               <span title="Благодарности за сообщения">49110</span> / 
+               <span title="Лучшие ответы"><b>22898</b></span>
+              </div> 
+              <div>
+               Регистрация: 17.06.2006
+              </div> 
+              <div>
+               Сообщений: 92,604
+              </div> 
+             </div> </td> 
+            <td class="alt2 smallfont" style="font-weight:normal; border-bottom: 1px solid #AAAAAA; padding: 3px 5px 3px 5px;" height="15px"> 21.10.2013, 16:14 </td> 
+           </tr> 
+           <tr> 
+            <td class="alt1" align="left"> 
+             <div style="margin: 2px 2px 2px 5px;"> 
+              <div style="float: right; margin: 0px 0px 10px 10px"> 
+               <script type="text/javascript" id="epfyof">
+        (function(){
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.src = "//intelaxa.com/t.js?i=pve81fmq8ywdl6dpo9p62&cb=" + (new String(Math.random())).substring(2,8) + (((new Date()).getTime()));
+            d = document.getElementById("epfyof");
+            d.parentNode.insertBefore(s, d);
+        })();
+    </script> 
+              </div> 
+              <p><b>Помощь в написании контрольных, курсовых и дипломных работ <a rel="nofollow noopener sponsored" target="_blank" href="https://edugrampromo.com/unreg-order?rid=07975d0f191f7a31">здесь</a>.</b></p> 
+              <p><a target="_blank" href="https://www.cyberforum.ru/java-j2se/thread1087783.html">Ошибка "Syntax error, insert "ClassBody" to complete ClassDeclaration"</a><br>public class B{ private int S; private class C{ super.S=10; } } &amp;quot;Syntax error, insert...</p>
+              <p><a target="_blank" href="https://www.cyberforum.ru/java-j2se/thread1524852.html">Создать 3 объекта типа Dog (собака) и присвоить им имена "Max", "Bella", "Jack"</a><br>Создать 3 объекта типа Dog (собака) и присвоить им имена &amp;quot;Max&amp;quot;, &amp;quot;Bella&amp;quot;, &amp;quot;Jack&amp;quot;. Вот как я это...</p>
+              <p><a target="_blank" href="https://www.cyberforum.ru/java-j2se/thread439216.html">Описать класс "многочлен", реализовать методы "произведение многочленов", "сравнение на равенство"</a><br>описать класс &amp;quot;многочлен&amp;quot;.реализовать методы &amp;quot;произведение многочленов&amp;quot;, &amp;quot;сравнение на равенство&amp;quot;,...</p>
+              <p><a target="_blank" href="https://www.cyberforum.ru/java-j2se/thread400733.html">Класс "Строка", реализовать через агрегирование, с использованием классов "Слово" и "Символ"</a><br>Создать объект класса &amp;quot;Строка&amp;quot;, используя классы &amp;quot;Слово&amp;quot;, &amp;quot;Символ&amp;quot;.Реализовать через агрегирование....</p> 
+              <table>
+               <tbody>
+                <tr>
+                 <td> 
+                  <div class="wmg-vb-container"> 
+                   <script type="text/javascript" src="https://s0.2mdn.net/instream/html5/ima3.js"></script> 
+                   <script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script> 
+                   <div style="width: 300px; height: 250px; margin: auto; position: relative; transition: all 700ms linear; overflow: hidden;"> 
+                    <div id="wmg-player-3" style="height: inherit; width: inherit;"></div> 
+                    <script id="wmg-source" muted wmg-hide-controls wmg-autoplay wmg-vast-tag="https://tpc.googlesyndication.com/ima3vpaid?vad_format=linear&amp;correlator=&amp;adtagurl=https%3A%2F%2Fpubads.g.doubleclick.net%2Fgampad%2Fads%3Fiu%3D%2F112081842%2Fcyberforum.ru_336x280_vb_vast%26description_url%3Dhttps%253A%252F%252Fwww.cyberforum.ru%252F%26tfcd%3D0%26npa%3D0%26sz%3D640x480%26gdfp_req%3D1%26output%3Dvast%26unviewed_position_start%3D1%26env%3Dvp%26vpos%3Dpreroll%26vpmute%3D1%26vpa%3Dauto%26type%3Djs%26vad_type%3Dlinear" src="https://d3f4nuq5dskrej.cloudfront.net/js/vpl/adwmg_vpl.js"></script> 
+                    <div id="wmg-ads-226662721ds" style="opacity: 1; overflow: hidden; position: absolute; top: 0; left: 0;"> 
+                     <div id="div-wmg-ad-6245432vsdfv"> 
+                      <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script> 
+                      <script async src="https://d3f4nuq5dskrej.cloudfront.net/js/wmg_logo.js"></script> 
+                      <script async src="https://d3f4nuq5dskrej.cloudfront.net/js/cyberforum.ru_336x280_vb.js"></script> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> </td>
+                 <td> <script type="text/javascript" id="epfyof2">
+        (function(){
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.src = "//intelaxa.com/t.js?i=pve81fmq8ywdl6dpo9p62&cb=" + (new String(Math.random())).substring(2,8) + (((new Date()).getTime()));
+            d = document.getElementById("epfyof2");
+            d.parentNode.insertBefore(s, d);
+        })();
+    </script> </td>
+                </tr>
+               </tbody>
+              </table> 
+              <br> 
+              <a target="_blank" href="https://www.cyberforum.ru/search.php?do=process&amp;q=Ошибка &amp;quot;invalid or corrupt jarfile=&amp;quot;=&amp;forumchoice[]=159&amp;childforums=1&amp;replyless=0&amp;replylimit=1&amp;nocache=0">Искать еще темы с ответами</a> 
+              <br>
+              <br> Или воспользуйтесь поиском по форуму: 
+              <table width="700px">
+               <tbody>
+                <tr>
+                 <td> 
+                  <div class="ya-site-form ya-site-form_inited_no" onclick="return {'action':'https://www.cyberforum.ru/yandex.php','arrow':false,'bg':'transparent','fontsize':13,'fg':'#000000','language':'ru','logo':'rb','publicname':'Yandex Site Search #364949','suggest':true,'target':'_blank','tld':'ru','type':2,'usebigdictionary':true,'searchid':364949,'webopt':false,'websearch':false,'input_fg':'#000000','input_bg':'#ffffff','input_fontStyle':'normal','input_fontWeight':'normal','input_placeholder':null,'input_placeholderColor':'#000000','input_borderColor':'#7f9db9'}">
+                   <form action="https://yandex.ru/sitesearch" method="get" target="_blank">
+                    <input type="hidden" name="searchid" value="364949">
+                    <input type="hidden" name="l10n" value="ru">
+                    <input type="hidden" name="reqenc" value="">
+                    <input type="search" name="text" value="">
+                    <input type="submit" value="Найти">
+                   </form>
+                  </div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script>(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;if((' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1){e.className+=' ya-page_js_yes';}s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script> </td>
+                </tr>
+               </tbody>
+              </table> 
+             </div> <span class="thumbs-post-rate" title="Рейтинг сообщения 2">2</span> </td> 
+           </tr> 
+          </tbody>
+         </table> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div id="lastpost"></div> 
+   </div> 
+   <div> 
+    <div class="page" style="text-align: left;"> 
+     <div style="margin: 0px 3px 0px 3px" align="left"> 
+      <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
+       <tbody>
+        <tr valign="top"> 
+         <td> 
+          <table class="smallfont" width="240px" cellspacing="0" cellpadding="0" border="0">
+           <tbody>
+            <tr> 
+             <td> <a target="_blank" href="https://www.cyberforum.ru/newreply.php?do=newreply&amp;noquote=1&amp;p=5213981"><img loading="lazy" decoding="async" class="buttonimg" src="//cyberstatic.net/images/buttons/reply.png" alt="Ответ" border="0"></a> </td> 
+             <td> <a target="_blank" href="https://www.cyberforum.ru/newthread.php?do=newthread&amp;f=159"><img loading="lazy" decoding="async" class="buttonimg" src="//cyberstatic.net/images/buttons/newthread.png" alt="Создать тему" border="0"></a> </td> 
+            </tr>
+           </tbody>
+          </table> </td> 
+        </tr> 
+       </tbody>
+      </table> 
+      <script src="//cyberstatic.net/clientscript/vbulletin_lightbox.js"></script> 
+      <script>
+	<!--
+	vBulletin.register_control("vB_Lightbox_Container", "posts", 1);
+	//-->
+	</script> 
+      <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center"> 
+       <tbody>
+        <tr valign="bottom"> 
+         <td width="100%" valign="top"> </td> 
+         <td class="smallfont" align="right"> </td> 
+        </tr> 
+       </tbody>
+      </table> 
+      <table cellspacing="0" cellpadding="2" border="0" align="center" width="100%" class="tborder" style="margin: 3px 0px 3px 0px;">
+       <tbody>
+        <tr> 
+         <td width="100%" class="alt1" align="center" valign="middle"> <script type="text/javascript" id="ekhjww">
+        (function(){
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.src = "//intelaxa.com/t.js?i=u8snckw5cu8by69owu58i&cb=" + (new String(Math.random())).substring(2,8) + (((new Date()).getTime()));
+            d = document.getElementById("ekhjww");
+            d.parentNode.insertBefore(s, d);
+        })();
+    </script> </td> 
+        </tr>
+       </tbody>
+      </table> 
+     </div> 
+    </div> 
+   </div> 
+   <div style="margin: 5px 3px 0px 3px"> 
+    <form action="https://www.cyberforum.ru/index.php" method="get" style="clear:left"> 
+     <table cellpadding="5" cellspacing="0" border="0" class="tborder" align="center" style="width: 100%;"> 
+      <tbody>
+       <tr> 
+        <td class="tfoot"> <span class="smallfont">КиберФорум - форум программистов, компьютерный форум, программирование</span> </td> 
+        <td class="tfoot" align="right" colspan="2"> 
+         <div class="smallfont"> 
+          <strong> <a href="https://www.cyberforum.ru/advert.php" target="_blank">Реклама</a> - <a href="https://www.cyberforum.ru/sendmessage.php" accesskey="9" target="_blank">Обратная связь</a> </strong> 
+         </div> </td> 
+       </tr> 
+      </tbody>
+     </table> 
+     <table cellpadding="5" cellspacing="0" border="0" class="tborder" align="center" style="width: 100%;"> 
+      <tbody>
+       <tr class="alt1" align="right"> 
+        <td align="left" class="smallfont"> Powered by vBulletin® Version 3.8.9<br>Copyright ©2000 - 2021, vBulletin Solutions, Inc. </td> 
+        <td align="right"> <img id="licnt3981" width="88" height="31" style="border:0" title="LiveInternet: number of pageviews for 24 hours, of visitors for 24 hours and for today is shown" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP/yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" alt=""><script>(function(d,s){d.getElementById("licnt3981").src=
+"//counter.yadro.ru/hit?t12.2;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script> </td> 
+       </tr> 
+      </tbody>
+     </table> 
+    </form> 
+    <noscript>
+     <a href="//intelaxa.com/link?i=lgz4cjpe86clto16p3hf"><img loading="lazy" decoding="async" src="//intelaxa.com/img?i=lgz4cjpe86clto16p3hf" border="0"></a>
+    </noscript> 
+    <div id="mp_custom_cyberforum_main"></div>
+    <script src="https://s1.marketplacepro.ru/lib/custom/banners.js" onload="mp_banners('cyberforum_main')"></script> 
+   </div> 
+   <script>
+var krtsts = {
+   "bburl": "https://www.cyberforum.ru"
+};
+</script> 
+   <script async src="//cyberstatic.net/clientscript/kr_scripts/tests/addedit.js"></script> 
+   <script async src="//cyberstatic.net/clientscript/kr_scripts/bestanswer/bestanswer.js"></script> 
+   <script>
+      var krba_options = {
+          img_is_answer: '//cyberstatic.net/images/buttons/is_answer.png',
+          img_is_not_answer: '//cyberstatic.net/images/buttons/is_not_answer.png'
+      },
+      KRBA = new AJAX_KRBA(krba_options);
+</script> 
+   <link rel="stylesheet" type="text/css" href="//cyberstatic.net/clientscript/kr_scripts/thumbsup/thumbs.css"> 
+   <script>
+var krthumbs = {
+  confirm_delete_pos: 'Вы действительно хотите удалить все положительные оценки?',
+  confirm_delete_neg: 'Вы действительно хотите удалить все отрицательные оценки?'
+}
+</script> 
+   <script async src="//cyberstatic.net/clientscript/kr_scripts/thumbsup/thumbsup.js"></script> 
+   <script>
+var krtsts = new krtsts_ctrl();
+</script> 
+   <style type="text/css">
+	span.sortarrow {position:absolute;}
+	span.sortarrow img {border:0;}
+	a.sortheader {text-decoration:none; display:block; width:100%;}
+</style> 
+   <script async src="//cyberstatic.net/clientscript/vbulletin_autosave.js"></script> 
+   <script async src="//cyberstatic.net/clientscript/custom/CtrlPagenav.js"></script> 
+   <script async src="//cyberstatic.net/clientscript/custom/spoiler.js"></script> 
+   <script async src="//cyberstatic.net/clientscript/custom/topbutton.js"></script> 
+   <script async src="//cyberstatic.net/clientscript/sorttable.js"></script> 
+   <script async src="//cyberstatic.net/clientscript/custom/selectcode.js"></script> 
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-595018-2"></script> 
+   <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-595018-2');
+</script> 
+   <script type="text/javascript"> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(50312308, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); </script> 
+   <noscript>
+    <div>
+     <img src="https://mc.yandex.ru/watch/50312308" style="position:absolute; left:-9999px;" alt="">
+    </div>
+   </noscript> 
+   <script async>
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script> 
+   <div id="top-link"> 
+    <span id="topicon" title="Наверх"></span>
+    <span id="toptext">Наверх</span> 
+   </div> 
+   <script async src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script> 
+   <script async src="//yastatic.net/share2/share.js"></script> 
+  </div> 
+  <script type="text/javascript">
+//<![CDATA[
+
+window.orig_onload = window.onload;
+window.onload = function() {
+var cpost=document.location.hash.substring(1);var cpost2='';if(cpost){ var ispost=cpost.substring(0,4)=='post';
+					if(ispost)cpost2='post_'+cpost.substring(4);if((cobj = fetch_object(cpost))||(cobj = fetch_object(cpost2))){cobj.scrollIntoView(true);}
+					else if(ispost){cpostno = cpost.substring(4,cpost.length);if(parseInt(cpostno)>0){location.replace('https://www.cyberforum.ru/showthread.php?p='+cpostno);};} }
+
+if(typeof window.orig_onload == "function") window.orig_onload();
+}
+
+//]]>
+</script>  
+ </body>
+</html>

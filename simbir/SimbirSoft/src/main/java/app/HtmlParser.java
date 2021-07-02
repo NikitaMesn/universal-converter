@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -15,6 +16,7 @@ import java.util.stream.Stream;
 public class HtmlParser {
     private final String pageURL;
     private Document page;
+    private Map<String, Long> mapWithCountWord = new HashMap<>();
 
 
     public HtmlParser(String pageURL) {
@@ -40,10 +42,10 @@ public class HtmlParser {
 
     public void printStatistic() {
         String text = page.text();
-        String fileName = getFileName();
+
 
          //Создаем map для подсчета каждого слова
-        Map<String, Long> mapWithCountWord = Stream.of(text.split("[^A-Za-zА-Яа-я]+"))
+        mapWithCountWord = Stream.of(text.split("[^A-Za-zА-Яа-я]+"))
                 //.filter(x -> x.length() > 2) // можно убрать союзы, но в задании такого не было
                 .map(String::toUpperCase) //приводим к верхнему регистру
                 .collect(Collectors.groupingBy( Function.identity(),Collectors.counting()));
@@ -53,6 +55,10 @@ public class HtmlParser {
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed()) //сортируем по убыванию
                 .forEach(e -> System.out.println(e.getKey() +" - " + e.getValue())); //вывод как в примере
 
+    }
+
+    public void saveStatistic() {
+        String fileName = getFileName();
         JsonUtils.saveToJsonDB(fileName, mapWithCountWord); //сохраняем статистику в базу данных в виде JSON
     }
 

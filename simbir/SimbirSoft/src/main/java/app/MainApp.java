@@ -14,20 +14,21 @@ public class MainApp {
         System.out.println(text);
         String url = input.nextLine();
 
+
         try {
             HtmlParser siteParser = new HtmlParser(url);
             siteParser.printStatistic();
             siteParser.savePage();
+            siteParser.saveStatistic();
         } catch (IllegalArgumentException illegalArgumentException) {
             ExceptionUtils.writeExceptionToFile(illegalArgumentException);
-            System.out.println("Ошибка в url.\nСсылка должна начинаться с http:// ");
-            //start("Ошибка в url-адресе, попробуйте еще раз:");
+            System.out.println("Ошибка в url.\nСсылка должна начинаться на http:// или https:// ");
+
         }catch (NullPointerException nullPointerException){
-            System.out.println("Такого сайта не существует. Попробуйте еще раз");
+            System.out.println("Такого сайта не существует. Проверьте URL");
         } catch (Exception e) {
             ExceptionUtils.writeExceptionToFile(e);
             System.out.println("Что то пошло не так... " + "\nПопробуйте еще раз");
-            //start("Что то пошло не так... " + "\nПопробуйте еще раз:");
         }
     }
 }
